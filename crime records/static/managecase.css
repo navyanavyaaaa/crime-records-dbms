@@ -1,0 +1,70 @@
+body {
+    background-color: rgb(10, 11, 54);
+}
+
+.navbar {
+    background-color: rgb(14, 16, 85);
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: 25px;
+    padding: 20px;
+    text-align: left;
+}
+
+.navbar a {
+    font-family: Helvetica;
+    padding: 50px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+h1 {
+    color: white;
+    margin-top: 90px;
+    text-align: center;
+    font-family: Helvetica;
+    opacity: 85%;
+}
+
+h2 {
+    color: white;
+    opacity: 85%;
+    font-family: helvetica;
+    margin-top: 70px;
+    margin-left: 30px;
+    font-size: 25px;
+}
+
+h3 {
+    color: white;
+    opacity: 85%;
+    font-family: helvetica;
+    margin-top: 70px;
+    margin-left: 30px;
+    font-size: 25px;
+}
+
+select {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

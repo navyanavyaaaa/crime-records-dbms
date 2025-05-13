@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Case</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='managecase.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"></div>
+        <nav>
+            <a href="#">HOME</a>
+            <a href="#">CASES</a>
+            <a href="#">CONTACT</a>
+        </nav>
+    </header>
+
+    <h1>Pick an Operation to view database:</h1>
+
+    <h2>1: Combined table of all Offenses and corresponding Offender details
+	<form action="{{ url_for('query1') }}" method="post" style="display: inline;">
+            <button type="submit">View Table</button>
+        </form>
+    </h2>
+
+    <h3>
+        2: Officers Handling 
+        <form action="{{ url_for('query2') }}" method="post" style="display: inline;">
+            <select id="options2" name="options2">
+                <option value="Unsolved">Unsolved</option>
+                <option value="Solved">Solved</option>
+            </select>
+            Cases
+            <button type="submit">View Table</button>
+        </form>
+    </h3>
+
+    <h3>
+        3. Offenders with
+        <form action="{{ url_for('query3') }}" method="post" style="display: inline;">
+            <select id="options3" name="options3">
+                <option value="Guilty">Guilty</option>
+                <option value="Not Guilty">Not Guilty</option>
+            </select>
+            Verdict
+            <button type="submit">View Table</button>
+        </form>
+    </h3>
+
+    <h3>
+        4: Offenders with Multiple Unsolved Offenses occurring between
+        <form action="{{ url_for('query4') }}" method="post" style="display: inline;">
+            <select id="options4a" name="options4a">
+                <option value="18">6 PM</option>
+                <option value="19">7 PM</option>
+                <option value="20">8 PM</option>
+                <option value="21">9 PM</option>
+                <option value="22">10 PM</option>
+                <option value="23">11 PM</option>
+                <option value="0">midnight</option>
+                <option value="1">1 AM</option>
+                <option value="2">2 AM</option>
+                <option value="3">3 AM</option>
+            </select>
+            and
+            <select id="options4b" name="options4b">
+                <option value="20">8 PM</option>
+                <option value="21">9 PM</option>
+                <option value="22">10 PM</option>
+                <option value="23">11 PM</option>
+                <option value="0">midnight</option>
+                <option value="1">1 AM</option>
+                <option value="2">2 AM</option>
+                <option value="3">3 AM</option>
+		<option value="4">4 AM</option>
+                <option value="5">5 AM</option>
+                <option value="6">6 AM</option>
+            </select>
+            <button type="submit">View Table</button>
+        </form>
+    </h3>
+
+    <h3>
+        5.  Offenders who have committed more than
+        <form action="{{ url_for('query5') }}" method="post" style="display: inline;">
+            <select id="options5" name="options5">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            offenses.
+            <button type="submit">View Table</button>
+        </form>
+    </h3>
+
+    <h3>
+        6. list of offenders/suspects involved in 
+        <form action="{{ url_for('query6') }}" method="post" style="display: inline;">
+            <select id="options6" name="options6">
+                <option value="unsolved">unsolved</option>
+                <option value="solved">solved</option>
+            </select>    
+            crimes, along with details.
+            <button type="submit">View Table</button>
+        </form>
+    </h3>
+
+    <h3>
+        7. list of offenses with officer and offender details, ordered by the offense date in
+        <form action="{{ url_for('query7') }}" method="post" style="display: inline;">
+            <select id="options7" name="options7">
+                <option value="ascending">ascending</option>
+                <option value="descending">descending</option>
+            </select>    
+            order.
+            <button type="submit">View Table</button>
+        </form>
+    </h3>
+
+    <h3>
+        8. Here's a query that finds offenders who have committed offenses with more witnesses than average
+        <form action="{{ url_for('query8') }}" method="post" style="display: inline;">
+            <button type="submit">View Table</button>
+        </form>
+    </h3>
+
+    <h3>
+        9. Case performance statistics for prosecutors.
+        <form action="{{ url_for('query9') }}" method="post" style="display: inline;">   
+            <button type="submit">View Table</button>
+        </form>
+    </h3>
+
+    <h3>
+        10. pairs of related offenses along with the offenders
+	<form action="/query10" method="post" style="display: inline;">    
+            common between them.
+            <button type="submit">View Table</button>
+        </form>
+    </h3>
+
+    <h3> 
+        <form action="{{ url_for('query11') }}" method="post" style="display: inline;">
+	    <label for="options11">11. Witnesses for </label>
+            <select id="options11" name="options11">
+                <option value="unsolved">unsolved</option>
+                <option value="solved">solved</option>
+            </select>    
+            cases who haven't supported prosecution
+            <button type="submit">View Table</button>
+        </form>
+    </h3>
+
+    <h3>
+        12. list of offense_id values where more than
+        <form action="{{ url_for('query12') }}" method="post" style="display: inline;">
+            <select id="options12" name="options12">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>    
+            officer is assigned to the same offense.
+            <button type="submit">View Table</button>
+        </form>
+    </h3>
+
+</body>
+</html>

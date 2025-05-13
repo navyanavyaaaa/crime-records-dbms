@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Offenses</title>
+    <link rel="stylesheet" href="static/result.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"></div>
+        <nav>
+            <a href="#">HOME</a>
+            <a href="#">CASES</a>
+            <a href="#">CONTACT</a>
+        </nav>
+    </header>
+    <h1>Combined Table of All Offenses and Corresponding Offender Details</h1>
+    <table border="1">
+        <tr>
+            <th>OFFENDER ID</th>
+	    <th>OFFENDER NAME</th>
+	    <th>NIGHT OFFENSES</th>
+	    <th>CRIME DETAILS</th>
+	</tr>
+        {% for row in results %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+	</tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

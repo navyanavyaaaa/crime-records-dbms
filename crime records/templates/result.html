@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Records Database | View Offenses</title>
+    <link rel="stylesheet" href="static/result.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <i class="fas fa-shield-alt"></i> CrimeTrack
+        </div>
+        <nav>
+            <a href="#"><i class="fas fa-home"></i> HOME</a>
+            <a href="#" class="active"><i class="fas fa-folder"></i> CASES</a>
+            <a href="#"><i class="fas fa-phone"></i> CONTACT</a>
+            <a href="#"><i class="fas fa-user"></i> LOGIN</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="header-section">
+            <h1><i class="fas fa-clipboard-list"></i> Criminal Offenses Database</h1>
+            <div class="controls">
+                <div class="search-box">
+                    <input type="text" placeholder="Search records...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <button class="btn print-btn"><i class="fas fa-print"></i> Print</button>
+                <button class="btn export-btn"><i class="fas fa-file-export"></i> Export</button>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Case ID</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Offender ID</th>
+                        <th>Name</th>
+                        <th>Alias</th>
+                        <th>Gender</th>
+                        <th>Height</th>
+                        <th>Guilty</th>
+                        <th>Blood Group</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in results %}
+                    <tr>
+                        <td class="case-id">{{ row[0] }}</td>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td class="description">{{ row[3] }}</td>
+                        <td><span class="status-badge {{ row[4]|lower }}">{{ row[4] }}</span></td>
+                        <td class="offender-id">{{ row[5] }}</td>
+                        <td class="name">{{ row[6] }}</td>
+                        <td>{{ row[7] }}</td>
+                        <td>{{ row[8] }}</td>
+                        <td>{{ row[9] }}</td>
+                        <td><span class="guilty-badge {{ 'guilty' if row[10] else 'not-guilty' }}">{{ 'Yes' if row[10] else 'No' }}</span></td>
+                        <td><span class="blood-group">{{ row[11] }}</span></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination">
+            <button class="btn"><i class="fas fa-chevron-left"></i> Previous</button>
+            <span>Page 1 of 5</span>
+            <button class="btn">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2023 CrimeTrack Database System. Restricted Access.</p>
+        <p class="disclaimer">This information is confidential and intended for law enforcement use only.</p>
+    </footer>
+</body>
+</html>

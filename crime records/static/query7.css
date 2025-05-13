@@ -1,0 +1,386 @@
+:root {
+    --primary: #4361ee;
+    --secondary: #3a0ca3;
+    --accent: #f72585;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --success: #4cc9f0;
+    --warning: #f8961e;
+    --danger: #ef233c;
+    --info: #4895ef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--dark);
+    min-height: 100vh;
+}
+
+.navbar {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    color: white;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navbar h1 i {
+    color: var(--accent);
+}
+
+nav {
+    display: flex;
+    gap: 1.8rem;
+}
+
+nav a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+    color: white;
+    border-bottom-color: var(--accent);
+}
+
+nav a.active {
+    color: white;
+    border-bottom-color: var(--accent);
+    font-weight: 600;
+}
+
+.container {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.8rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.header-section h2 {
+    color: var(--secondary);
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.search-box {
+    display: flex;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.search-box:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.search-box input {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    outline: none;
+    min-width: 250px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-box button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+    background-color: var(--secondary);
+}
+
+.btn {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.print-btn {
+    background-color: var(--info);
+}
+
+.export-btn {
+    background-color: var(--success);
+}
+
+.table-container {
+    border-radius: 10px;
+    overflow-x: auto;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+th, td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+
+th {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    color: white;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+tr:hover {
+    background-color: rgba(67, 97, 238, 0.05);
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.witness-id {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.name {
+    font-weight: 500;
+}
+
+.name i {
+    color: var(--secondary);
+    margin-right: 8px;
+}
+
+.gender-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.gender-badge.male {
+    background-color: rgba(67, 97, 238, 0.1);
+    color: var(--primary);
+}
+
+.gender-badge.female {
+    background-color: rgba(247, 37, 133, 0.1);
+    color: var(--accent);
+}
+
+.description {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.case-id {
+    font-weight: 600;
+    color: var(--info);
+}
+
+.judge i {
+    color: var(--warning);
+    margin-right: 8px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.pagination span {
+    font-weight: 500;
+    color: var(--secondary);
+}
+
+footer {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1.2rem;
+        text-align: center;
+    }
+    
+    .header-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-box {
+        width: 100%;
+    }
+    
+    .controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    table {
+        font-size: 0.85rem;
+    }
+    
+    th, td {
+        padding: 10px 12px;
+    }
+}
+
+/* Add these to your existing CSS */
+.case-id {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.description {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.offenders {
+    font-weight: 500;
+    color: var(--danger);
+}
+
+/* Add these to your existing CSS */
+.case-id {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.description {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.open {
+    background-color: var(--warning);
+    color: white;
+}
+
+.status-badge.closed {
+    background-color: var(--success);
+    color: white;
+}
+
+.status-badge.pending {
+    background-color: var(--info);
+    color: white;
+}
+
+.rank-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: rgba(67, 97, 238, 0.1);
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.offender-name {
+    font-weight: 500;
+}
+
+.fa-user-shield {
+    color: var(--info);
+    margin-right: 8px;
+}
+
+.fa-user {
+    color: var(--secondary);
+    margin-right: 8px;
+}

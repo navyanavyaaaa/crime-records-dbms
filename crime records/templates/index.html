@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"></div>
+        <nav>
+            <a href="#">HOME</a>
+            <a href="#">CASES</a>
+            <a href="#">CONTACT</a>
+        </nav>
+    </header>
+    <img src="{{ url_for('static', filename='images/delhipolice.png') }}" alt="delhipolice logo">
+    <h1>CRIMINAL MANAGEMENT SYSTEM</h1>
+    <h2>Welcome, Officer Goyal</h2>
+    <h3>What would you like to proceed with today?</h3>
+    <div class="card-container">
+        <div class="card-case">
+            <a href="{{ url_for('manage_case') }}">
+                <button>Case Management</button>
+            </a>  
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

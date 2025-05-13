@@ -1,0 +1,80 @@
+body {
+    background-color: rgb(10, 11, 54);    
+}
+
+.navbar {
+    background-color: rgb(14, 16, 85);
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: 25px;
+    padding: 20px;
+    text-align: left;
+}
+
+.navbar a {
+    font-family: Helvetica;
+    padding: 50px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+img {
+    width: 7%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+h1 {
+    font-family: Helvetica;
+    font-weight: 800;
+    font-size: 50px;
+    color: rgb(250, 235, 214);
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid rgb(250, 235, 214);
+}
+
+h2 {
+    font-family: helvetica;
+    text-align: center;
+    color: rgb(250, 235, 214);
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+h3 {
+    font-family: helvetica;
+    text-align: center;
+    font-weight: 400;
+    color: rgb(250, 235, 214);
+    margin-top: 30px;
+}
+
+.card-container {
+    display: flex; 
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card-case {
+    background-color: rgb(11, 169, 172);
+    border: none;;
+    border-radius: 8px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgb(250, 235, 214);
+}
+
+.card-case button {
+    border: none;
+    background-color: rgb(11, 169, 172);
+    font-family: helvetica;
+    font-size: 20px;
+    color: white;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Related Offenses | Criminal Records System</title>
+    <link rel="stylesheet" href="static/query7.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <h1><i class="fas fa-shield-alt"></i> Criminal Records System</h1>
+        <nav>
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+            <a href="#" class="active"><i class="fas fa-link"></i> Related Cases</a>
+            <a href="#"><i class="fas fa-folder"></i> Cases</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="header-section">
+            <h2><i class="fas fa-project-diagram"></i> Pairs of Related Offenses</h2>
+            <div class="controls">
+                <div class="search-box">
+                    <input type="text" placeholder="Search related cases...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <button class="btn print-btn"><i class="fas fa-print"></i> Print</button>
+                <button class="btn export-btn"><i class="fas fa-file-export"></i> Export</button>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Case 1 ID</th>
+                        <th>Case 1 Description</th>
+                        <th>Case 2 ID</th>
+                        <th>Case 2 Description</th>
+                        <th>Common Offenders</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in results %}
+                    <tr>
+                        <td class="case-id">{{ row[0] }}</td>
+                        <td class="description">{{ row[1] }}</td>
+                        <td class="case-id">{{ row[2] }}</td>
+                        <td class="description">{{ row[3] }}</td>
+                        <td class="offenders">{{ row[4] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination">
+            <button class="btn"><i class="fas fa-chevron-left"></i> Previous</button>
+            <span>Page 1 of 5</span>
+            <button class="btn">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2023 Criminal Records System. Restricted Access.</p>
+    </footer>
+</body>
+</html>
